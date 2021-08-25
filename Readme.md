@@ -28,6 +28,8 @@ The `Enumeration` base class is based on this article: https://docs.microsoft.co
 
 Its worthwhile to notice that a type based on `Enumeration` can contain pre-assigned display name, and therefore the conversion does  not allocate any memory when accessing this name.
 
+### Native Enum ToString() under the hood
+
 The native `Enum` has to execute binary search in order to find out the correct enum value which can be O (log n).
 ```c#
 
