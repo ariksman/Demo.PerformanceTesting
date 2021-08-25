@@ -30,6 +30,19 @@ Its worthwhile to notice that a type based on `Enumeration` can contain pre-assi
 
 The native `Enum` has to execute binary search in order to find out the correct enum value which can be O (log n).
 ```c#
+
+public override string ToString()
+{
+    // Returns the value in a human readable format.  For PASCAL style enums who's value maps directly the name of the field is returned.
+    // For PASCAL style enums who's values do not map directly the decimal value of the field is returned.
+    // For BitFlags (indicated by the Flags custom attribute): If for each bit that is set in the value there is a corresponding constant
+    // (a pure power of 2), then the OR string (ie "Red, Yellow") is returned. Otherwise, if the value is zero or if you can't create a string that consists of
+    // pure powers of 2 OR-ed together, you return a hex value
+
+    // Try to see if its one of the enum values, then we return a String back else the value
+    return InternalFormat((RuntimeType)GetType(), ToUInt64()) ?? ValueToString();
+}
+        
 private static string? InternalFormat(RuntimeType enumType, ulong value)
 {
     EnumInfo enumInfo = GetEnumInfo(enumType);
