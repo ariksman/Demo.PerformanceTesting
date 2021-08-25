@@ -24,4 +24,4 @@ The `Enumeration` base class is based on this article: https://docs.microsoft.co
 | EnumerationAllValuesToString |   123.1986 ns |  1.9748 ns |  1.8472 ns |   123.5370 ns | 0.0433 |     272 B |
 ```
 
-Its worthwhile to notice that the `Enumeration` can contain pre-assigned display name, and therefore the conversion does  not allocate any memory when accessing this name.
+Its worthwhile to notice that a type based on `Enumeration` can contain pre-assigned display name, and therefore the conversion does  not allocate any memory when accessing this name.
