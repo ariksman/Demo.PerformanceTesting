@@ -1,5 +1,6 @@
 # Solution structure
 
+Initial idea from https://youtu.be/BoE5Y6Xkm6w
 ```
 .
 └── Demo.EnumVsEnumeration.BenchmarkTests
