@@ -1,6 +1,8 @@
 # Solution structure
 
-Initial idea from https://youtu.be/BoE5Y6Xkm6w
+Initial idea for benchmarking is from Nick Chapsas video: https://youtu.be/BoE5Y6Xkm6w
+
+The `Enumeration` base class is based on this article: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
 ```
 .
 └── Demo.EnumVsEnumeration.BenchmarkTests
