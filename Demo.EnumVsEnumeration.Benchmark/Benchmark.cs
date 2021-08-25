@@ -10,14 +10,14 @@ namespace Demo.EnumVsEnumeration.Benchmark
         [Benchmark]
         public string NativeEnumValueToString()
         {
-            return TestEnum.Valid.ToString();
+            return TestStatusEnum.Valid.ToString();
         }
 
         [Benchmark]
         public List<string> NativeEnumAllValuesToString()
         {
             var values = new List<string>();
-            foreach (var value in Enum.GetValues(typeof(TestEnum)))
+            foreach (var value in Enum.GetValues(typeof(TestStatusEnum)))
             {
                 values.Add(value.ToString() ?? string.Empty);
             }

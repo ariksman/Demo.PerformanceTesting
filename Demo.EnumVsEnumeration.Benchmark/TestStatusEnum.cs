@@ -1,6 +1,6 @@
 ﻿namespace Demo.EnumVsEnumeration.Benchmark
 {
-    public enum TestEnum
+    public enum TestStatusEnum
     {
         Invalid,
         Valid,
