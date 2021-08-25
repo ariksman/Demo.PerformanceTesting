@@ -32,10 +32,22 @@ namespace Demo.EnumVsEnumeration.Benchmark
         }
 
         [Benchmark]
-        public List<string> EnumerationAllValuesToString()
+        public List<string> EnumerationListAllValuesToString()
         {
             var values = new List<string>();
             foreach (var value in TestStatusEnumeration.List())
+            {
+                values.Add(value.Name);
+            }
+
+            return values;
+        }
+        
+        [Benchmark]
+        public List<string> EnumerationGetAllValuesToString()
+        {
+            var values = new List<string>();
+            foreach (var value in Enumeration.GetAll<TestStatusEnumeration>())
             {
                 values.Add(value.Name);
             }
