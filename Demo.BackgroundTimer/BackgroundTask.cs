@@ -7,13 +7,13 @@ namespace Demo.BackgroundTimer
     private Task? _timerTask;
     private readonly CancellationTokenSource _cts = new();
 
-    public void StartAsync(TimeSpan timeSpan, Func<Task> action)
+    public void Start(TimeSpan timeSpan, Func<Task> action)
     {
       async Task DoStart()
       {
         try
         {
-          var timer = new PeriodicTimer(timeSpan);
+          using var timer = new PeriodicTimer(timeSpan);
           while(await timer.WaitForNextTickAsync(_cts.Token))
           {
             await action();
@@ -29,7 +29,10 @@ namespace Demo.BackgroundTimer
     {
       _cts.Cancel();
 
-      await _timerTask;
+      if (_timerTask is not null)
+      {
+        await _timerTask;
+      }
 
       _cts.Dispose();
 

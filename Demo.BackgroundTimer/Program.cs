@@ -9,7 +9,7 @@ class Program
     Console.WriteLine("Hello, World!");
 
     var task = new BackgroundTask();
-    task.StartAsync(TimeSpan.FromSeconds(2), () => Task.Run(() => Console.WriteLine($"Tick, {DateTime.UtcNow:O}")));
+    task.Start(TimeSpan.FromSeconds(2), () => Task.Run(() => Console.WriteLine($"Tick, {DateTime.UtcNow:O}")));
 
     Console.ReadKey();
 
